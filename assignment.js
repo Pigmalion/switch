@@ -180,7 +180,7 @@ function _processAllCollidedEvents(aEvents) {
 }
 
 function sortEvents(aEvents) {
-
+    aEvents = aEvents.filter(a => a.start < a.end);
     aEvents.sort((a, b) => a.start - b.start);
     aEvents[0].top = aEvents[0].start;
     aEvents[0].left = 0;
